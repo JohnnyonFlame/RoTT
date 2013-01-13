@@ -223,8 +223,6 @@ void ReadInt (const char * s1, int * val)
          {
          GetToken(false);
          *val=ParseNum(token);
-
-         printf ("Variable %s has value %i.\n", s1, *val);
          }
       }
 }
