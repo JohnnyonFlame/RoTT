@@ -964,7 +964,11 @@ void SetConfigDefaultValues (void)
    if (MousePresent)
       mouseenabled = true;
 
+#ifdef _GCW_
+   joystickenabled = true;
+#else
    joystickenabled = false;
+#endif
    joypadenabled   = false;
    joystickport    = 0;
    viewsize        = 7;

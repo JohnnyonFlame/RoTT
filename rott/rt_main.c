@@ -1742,7 +1742,7 @@ void QuitGame ( void )
       px = ERRORVERSIONCOL;
       py = ERRORVERSIONROW;
 #if (BETA == 1)
-      UL_printf ("á");
+      UL_printf ("ï¿½");
 #else
       UL_printf (itoa(ROTTMAJORVERSION,&buf[0],10));
 #endif
@@ -2108,7 +2108,7 @@ fromloadedgame:
 			{
          boolean escaped=false;
 
-         if (LastScan == sc_Escape)
+         if (LastScan == sc_Return)
             {
             MU_StoreSongPosition();
             MU_StartSong(song_menu);

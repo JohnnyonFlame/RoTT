@@ -1085,7 +1085,11 @@ sdl_mouse_grabbed = 1;
   except where no such name is available.
  */
     memset(scancodes, '\0', sizeof (scancodes));
+#ifdef _GCW_
+    scancodes[SDLK_ESCAPE]          = sc_Return;
+#else
     scancodes[SDLK_ESCAPE]          = sc_Escape;
+#endif
     scancodes[SDLK_1]               = sc_1;
     scancodes[SDLK_2]               = sc_2;
     scancodes[SDLK_3]               = sc_3;
@@ -1114,7 +1118,11 @@ sdl_mouse_grabbed = 1;
     scancodes[SDLK_p]               = sc_P;
     scancodes[SDLK_LEFTBRACKET]     = sc_OpenBracket;
     scancodes[SDLK_RIGHTBRACKET]    = sc_CloseBracket;
+#ifdef _GCW_
+    scancodes[SDLK_RETURN]          = sc_Escape;
+#else
     scancodes[SDLK_RETURN]          = sc_Return;
+#endif
     scancodes[SDLK_LCTRL]           = sc_Control;
     scancodes[SDLK_a]               = sc_A;
     scancodes[SDLK_s]               = sc_S;

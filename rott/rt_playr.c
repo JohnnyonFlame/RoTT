@@ -171,21 +171,76 @@ int rightmom = 0;
 int lastmom = 0;
 int first    = 1;
 
+#ifdef _GCW_
+int playerautoaim = 1;
+#else
 int playerautoaim = 0;
+#endif
 
 int pausedstartedticcount;
 boolean RefreshPause = true;
 
 boolean  buttonpoll[NUMBUTTONS];
 
-int      buttonscan[NUMBUTTONS] = {sc_Control, sc_Alt, sc_RShift, sc_Space,
-											  sc_PgUp,sc_PgDn,sc_Enter,sc_Delete,
-                                   sc_Home,sc_End,sc_1,sc_2,sc_3,sc_4,
-                                   sc_CapsLock, sc_F12,
-                                   sc_Comma,sc_Period,sc_BackSpace,sc_A,
-                                   sc_UpArrow, sc_RightArrow,
-                                   sc_DownArrow, sc_LeftArrow,
-                                   sc_Tab, sc_T, sc_Z };
+#ifdef _GCW_
+int      buttonscan[NUMBUTTONS] = {
+		sc_Control,			//Fire
+		sc_Alt,     		//Strafe
+		sc_RShift,			//Run
+		sc_Space,				//Action
+		sc_PgUp,				//Fly Up
+		sc_PgDn,				//Fly Down
+		sc_Tab,				//Toggle Weapon
+		sc_Delete,			//Drop Weapon
+		sc_Home,				//Aim Up
+		sc_End,					//Aim Down
+		sc_1,						//I would imagine this chunk
+		sc_2,
+		sc_3,
+		sc_4,						//Is for switching guns, amirite?
+		sc_CapsLock,    //Autorun
+		sc_F12,					//damn dude boss is here hide it
+		sc_Comma,				//Strafe left
+		sc_Period,			//Strafe right
+		sc_BackSpace,		//Volte-face (turn around)
+		sc_A,						//A for Aim
+		sc_UpArrow,			//Directional
+		sc_RightArrow,
+		sc_DownArrow,
+		sc_LeftArrow,   //Pad, pretty obvious
+		sc_Escape,					//Map View
+		sc_T,						//Send Message
+		sc_Z };					//Direct Message
+#else
+int      buttonscan[NUMBUTTONS] = {
+		sc_Control,			//Fire
+		sc_Alt,     		//Strafe
+		sc_RShift,			//Run
+		sc_Space,				//Action
+		sc_PgUp,				//Fly Up
+		sc_PgDn,				//Fly Down
+		sc_Enter,				//Toggle Weapon
+		sc_Delete,			//Drop Weapon
+		sc_Home,				//Aim Up
+		sc_End,					//Aim Down
+		sc_1,						//I would imagine this chunk
+		sc_2,
+		sc_3,
+		sc_4,						//Is for switching guns, amirite?
+		sc_CapsLock,    //Autorun
+		sc_F12,					//damn dude boss is here hide it
+		sc_Comma,				//Strafe left
+		sc_Period,			//Strafe right
+		sc_BackSpace,		//Volte-face (turn around)
+		sc_A,						//A for Aim
+		sc_UpArrow,			//Directional
+		sc_RightArrow,
+		sc_DownArrow,
+		sc_LeftArrow,   //Pad, pretty obvious
+		sc_Tab,					//Map View
+		sc_T,						//Send Message
+		sc_Z };					//Direct Message
+#endif
 
 int      joyxmax = 0, joyymax = 0, joyxmin = 0, joyymin = 0;
 
@@ -199,7 +254,11 @@ int      buttonjoy[16] = {
 		bt_nobutton, bt_nobutton, bt_nobutton, bt_nobutton
 };
 
+#ifdef _GCW_
+int			 axisjoy[8] = { ax_turn, ax_move, ax_ignore, ax_turn, ax_lookver, ax_ignore };
+#else
 int			 axisjoy[8] = { ax_move, ax_strafe, ax_ignore, ax_turn, ax_lookver, ax_ignore };
+#endif
 
 williamdidthis FREE = {84,5,0,0,9,{{done,2,1},{done,2,2},{done,2,3},
   {done,2,4},{done,2,5},{done,2,6},{done,2,7},{done,2,8},
