@@ -1443,8 +1443,11 @@ void ReadROTTMap
    int    plane;
    byte  *buffer;
 
-   CheckRTLVersion( filename );
-   filehandle = SafeOpenRead( filename );
+   char buf[MAX_PATH];
+   snprintf(buf, MAX_PATH, "%s/.rott/%s", getenv("HOME"), filename);
+
+   CheckRTLVersion( buf );
+   filehandle = SafeOpenRead( buf );
 
    //
    // Load map header

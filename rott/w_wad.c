@@ -91,7 +91,9 @@ void W_AddFile (char *_filename)
         char filename[MAX_PATH];
         char buf[MAX_PATH+100];//bna++
 
-        strncpy(filename, _filename, sizeof (filename));
+        //strncpy(filename, _filename, sizeof (filename));
+        snprintf(filename, MAX_PATH, "%s/.rott/%s", getenv("HOME"), _filename);
+
         filename[sizeof (filename) - 1] = '\0';
         FixFilePath(filename);
 

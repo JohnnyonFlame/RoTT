@@ -17,7 +17,7 @@ ROTT ?= rott
 
 CC = /opt/gcw0-toolchain/usr/bin/mipsel-linux-gcc
 
-CFLAGS ?= -g -O0
+CFLAGS ?= -O2 -fomit-frame-pointer -ffunction-sections -ffast-math -fsingle-precision-constant -G0
 CFLAGS += -Wall -Wno-unused
 CFLAGS += $(shell /opt/gcw0-toolchain/usr/mipsel-gcw0-linux-uclibc/sysroot/usr/bin/sdl-config --cflags)
 CFLAGS += $(EXTRACFLAGS)
