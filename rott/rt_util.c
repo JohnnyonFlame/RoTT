@@ -356,7 +356,7 @@ void Error (char *error, ...)
    px = ERRORVERSIONCOL;
    py = ERRORVERSIONROW;
 #if (BETA == 1)
-   UL_printf ("á");
+   UL_printf ("ï¿½");
 #else
    UL_printf (itoa(ROTTMAJORVERSION,&buf[0],10));
 #endif
@@ -1573,7 +1573,7 @@ void UL_DisplayMemoryError ( int memneeded )
    px = ERRORVERSIONCOL;
    py = ERRORVERSIONROW;
 #if (BETA == 1)
-   UL_printf ("á");
+   UL_printf ("ï¿½");
 #else
    UL_printf (itoa(ROTTMAJORVERSION,&buf[0],10));
 #endif

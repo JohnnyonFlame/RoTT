@@ -208,7 +208,7 @@ int      buttonscan[NUMBUTTONS] = {
 		sc_RightArrow,
 		sc_DownArrow,
 		sc_LeftArrow,   //Pad, pretty obvious
-		sc_Escape,					//Map View
+		sc_Return,					//Map View
 		sc_T,						//Send Message
 		sc_Z };					//Direct Message
 #else

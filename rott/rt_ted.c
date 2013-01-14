@@ -1443,11 +1443,16 @@ void ReadROTTMap
    int    plane;
    byte  *buffer;
 
+#if (SHAREWARE==0) && (USEHOMEPATH==1)
    char buf[MAX_PATH];
    snprintf(buf, MAX_PATH, "%s/.rott/%s", getenv("HOME"), filename);
 
    CheckRTLVersion( buf );
    filehandle = SafeOpenRead( buf );
+#else
+   CheckRTLVersion( filename );
+   filehandle = SafeOpenRead( filename );
+#endif
 
    //
    // Load map header

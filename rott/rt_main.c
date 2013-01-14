@@ -2108,7 +2108,7 @@ fromloadedgame:
 			{
          boolean escaped=false;
 
-         if (LastScan == sc_Return)
+         if (LastScan == sc_Escape)
             {
             MU_StoreSongPosition();
             MU_StartSong(song_menu);

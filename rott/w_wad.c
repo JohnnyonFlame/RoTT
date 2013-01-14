@@ -91,12 +91,14 @@ void W_AddFile (char *_filename)
         char filename[MAX_PATH];
         char buf[MAX_PATH+100];//bna++
 
-        //strncpy(filename, _filename, sizeof (filename));
+#if (SHAREWARE==0) && (USEHOMEPATH==1)
         snprintf(filename, MAX_PATH, "%s/.rott/%s", getenv("HOME"), _filename);
 
         filename[sizeof (filename) - 1] = '\0';
         FixFilePath(filename);
-
+#else
+        strncpy(filename, _filename, sizeof (filename));
+#endif
 		//bna section start
 		if (access (filename, 0) != 0) {
 			strcpy (buf,"Error, Could not find User file '");
