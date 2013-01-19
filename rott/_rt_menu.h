@@ -215,8 +215,8 @@ static byte ExtScanCodes[] = // Scan codes with >1 char names
    0x50, 0x4b, 0x4d, 0x00
 };
 
-#ifdef _GCW_
 static byte *ExtScanNames[] = // Names corresponding to ExtScanCodes
+#ifdef _GCW_
 {
    "Start","R","L","A","X","?","?","?","?","?",
    "?","?","?","?","?","?","?","?","?","Select","Y",

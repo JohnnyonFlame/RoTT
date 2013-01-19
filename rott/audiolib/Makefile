@@ -1,8 +1,8 @@
 AUDIOLIB ?= audiolib.a
 
-AR = mipsel-linux-ar
-CC = mipsel-linux-gcc
-RANLIB = mipsel-linux-ranlib
+AR = ar
+CC = gcc
+RANLIB = ranlib
 
 ARFLAGS ?= rcT
 CFLAGS ?= -g -O2
