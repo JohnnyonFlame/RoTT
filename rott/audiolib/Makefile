@@ -1,8 +1,8 @@
 AUDIOLIB ?= audiolib.a
 
-AR = ar
-CC = gcc
-RANLIB = ranlib
+AR ?= ar
+CC ?= gcc
+RANLIB ?= ranlib
 
 ARFLAGS ?= rcT
 CFLAGS ?= -g -O2
